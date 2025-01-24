@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gtdmaui.ItemEditPage"
+             Title="Edit Item">
+
+    <VerticalStackLayout Spacing="10" Padding="20">
+        <Entry x:Name="TitleEntry" 
+               Placeholder="Item Title" 
+               Text="{Binding Title}"/>
+        
+        <Editor x:Name="NotesEditor" 
+                Placeholder="Notes" 
+                Text="{Binding Notes}" 
+                HeightRequest="100"/>
+        
+        <DatePicker x:Name="DueDatePicker" 
+                    Date="{Binding DueDate}"/>
+        
+        <Picker x:Name="Statepicker" 
+                Title="Processing State"
+                SelectedIndex="{Binding State}">
+            <Picker.Items>
+                <x:String>Inbox</x:String>
+                <x:String>NextAction</x:String>
+                <x:String>WaitingFor</x:String>
+                <x:String>Someday</x:String>
+                <x:String>Reference</x:String>
+                <x:String>Done</x:String>
+            </Picker.Items>
+        </Picker>
+        
+        <Entry x:Name="ProjectEntry" 
+               Placeholder="Project" 
+               Text="{Binding Project}"/>
+        
+        <Entry x:Name="ContextEntry" 
+               Placeholder="Context" 
+               Text="{Binding Context}"/>
+        
+        <Button Text="Save" 
+                Clicked="OnSaveClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
