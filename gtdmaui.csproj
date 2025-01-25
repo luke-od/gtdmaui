@@ -60,9 +60,37 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="ProjectDetailPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Google.Apis.Calendar.v3" Version="1.68.0.3592" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.30" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="InboxPage.xaml.cs">
+	    <DependentUpon>InboxPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ProjectsPage.xaml.cs">
+	    <DependentUpon>ProjectsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="NextActionsPage.xaml.cs">
+	    <DependentUpon>NextActionsPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="InboxPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NextActionsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ProjectsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

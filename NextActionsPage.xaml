@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gtdmaui.NextActionsPage"
+             Title="Next Actions">
+
+	<Grid RowDefinitions="Auto,*,Auto">
+		<Label Grid.Row="0"
+               Text="Next Actions"
+               FontSize="Large"
+               HorizontalOptions="Center"/>
+
+		<ListView x:Name="NextActionsListView"
+                  Grid.Row="1"
+                  ItemSelected="OnItemSelected">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal">
+							<Label Text="{Binding Title}" FontAttributes="Bold" />
+							<Label Text="{Binding DueDate}" TextColor="Gray" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+
+		<Button Grid.Row="2"
+                Text="Add Next Action"
+                Clicked="OnAddNextActionClicked"/>
+	</Grid>
+</ContentPage>
